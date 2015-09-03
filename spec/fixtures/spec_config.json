@@ -1,0 +1,49 @@
+{
+  "endpoint" : {
+    "user" : "admin",
+    "pass": "netwitness",
+    "host": "broker.local",
+    "port": "50103"
+  }, 
+  "syslog" : {
+    "loghost":"loghost.local",
+    "logport":514
+  },
+  "cef_static_fields" : {
+    "deviceVendor":"ERCOT",
+    "deviceProduct":"nwsdk",
+    "deviceCustomString1Label":"threat.desc",
+    "deviceCustomString2Label":"threat.source",
+    "deviceCustomString3Label":"threat.category",
+    "deviceCustomNumber1Label":"asn.src",
+    "deviceCustomNumber2Label":"asn.dst"
+  },
+  "cef_mapping" : {
+    "action": "deviceAction",
+    "alias.host": "destinationProcessName",
+    "asn.dst": "deviceCustomNumber2",
+    "asn.src": "deviceCustomNumber1",
+    "did": "deviceHostName",
+    "directory": "filePath",
+    "domain.dst": "destinationHostName",
+    "eth.dst": "destinationMacAddress",
+    "eth.src": "sourceMacAddress",
+    "filename": "fileName",
+    "ip.dst": "destinationAddress",
+    "ip.proto": "transportProtocol",
+    "ip.src": "sourceAddress",
+    "risk.warning": "name",
+    "risk.suspicious": "name",
+    "service": "applicationProtocol",
+    "sessionid": "externalId",
+    "size": "bytesIn",
+    "tcp.dstport": "destinationPort",
+    "tcp.srcport": "sourcePort",
+    "threat.desc": "deviceCustomString1",
+    "threat.source": "deviceCustomString2",
+    "threat.category": "deviceCustomString3",
+    "udp.dstport": "destinationPort",
+    "udp.srcport": "sourcePort",
+    "username": "destinationUserName"
+  }
+}

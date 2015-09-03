@@ -1,0 +1,7 @@
+#!/bin/env ruby
+$LOAD_PATH.push(File.join(File.dirname(__FILE__), "..", "lib"))
+require 'nwsdk'
+require 'nwsdk/cli'
+
+
+Nwsdk::Cli.start(ARGV)

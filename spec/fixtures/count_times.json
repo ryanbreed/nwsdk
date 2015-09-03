@@ -1,0 +1,45 @@
+{
+    "flags" : 1074200577,
+    "results" : {
+        "id1" : 0,
+        "id2" : 0,
+        "fields" : [
+            {
+                "id1" : 87358847769,
+                "id2" : 87358901628,
+                "count" : 135,
+                "format" : 32,
+                "type" : "time",
+                "flags" : 0,
+                "group" : 0,
+                "value" : 1440831600
+            },
+            {
+                "id1" : 87337995311,
+                "id2" : 87338044600,
+                "count" : 106,
+                "format" : 32,
+                "type" : "time",
+                "flags" : 0,
+                "group" : 0,
+                "value" : 1440799200
+            },
+            {
+                "id1" : 87330265779,
+                "id2" : 87330311333,
+                "count" : 87,
+                "format" : 32,
+                "type" : "time",
+                "flags" : 0,
+                "group" : 0,
+                "value" : 1440790200
+            }
+        ]
+    },
+    "resultsInfo" : {
+        "devices" : "10.1.1.1:50005=on",
+        "offlineDeviceCount" : "0",
+        "onlineDeviceCount" : "1",
+        "deviceElapsedTime" : "10.1.1.1:50005=00:00:00"
+    }
+}
