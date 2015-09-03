@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{ small wrapper around netwitness REST API }
   spec.description   = %q{ allows users to run queries, extracts, and generate cef alerts }
-  spec.homepage      = 'http://www.ercot.com'
-  spec.license       = 'MIT'
+  spec.homepage      = 'http://github.com/ryanbreed/nwsdk'
+  spec.license       = 'GPLv3'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'bin'
