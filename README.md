@@ -2,6 +2,8 @@
 
 Simplified wrapper + cli for NetWitness REST endpoints
 
+[![Build Status](https://travis-ci.org/ryanbreed/nwsdk.svg?branch=master)](https://travis-ci.org/ryanbreed/nwsdk)
+
 ## Installation
 
 Add this line to your application's Gemfile:
