@@ -12,8 +12,8 @@ module Nwsdk
         when 10,11
           field['value'].to_f
         when 32
-          t=Time.at(field['value'].to_i)
-          t + t.gmtoff
+          Time.at(field['value'].to_i).utc
+          #t + t.gmtoff
         when 33
           Nwsdk::Constants::NW_VARIANT_DAYS[field['value'].to_i]
         when 128,129
