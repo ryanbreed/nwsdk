@@ -41,7 +41,8 @@ describe Nwsdk::Helpers do
       expect(decode_value(variant_float64)).to eq(1152921504606846976.5)
     end
     it 'parses times' do
-      expect(decode_value(variant_time)).to eq(Time.at(1440889152) - Time.at(1440889152).gmtoff)
+      expect(decode_value(variant_time)).to eq(Time.at(1440889152).utc)
+      #- Time.at(1440889152).gmtoff)
     end
     it 'parses IPv4 Addresses' do
       expect(decode_value(variant_ipv4)).to eq(IPAddr.new('192.168.1.1'))
@@ -86,11 +87,11 @@ describe Nwsdk::Helpers do
   describe '#count_results' do
     let(:result) {JSON.parse(File.read('spec/fixtures/count_times.json'))}
     it 'returns a hash of keys and totals' do
-      off = Time.new.gmtoff
+      #off = Time.new.gmtoff
       expect(count_results(result)).to eq({
-        Time.at(1440831600) - off => 135,
-        Time.at(1440799200) - off => 106,
-        Time.at(1440790200) - off => 87
+        Time.at(1440831600).utc => 135,
+        Time.at(1440799200).utc => 106,
+        Time.at(1440790200).utc => 87
       })
     end
 

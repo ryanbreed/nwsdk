@@ -161,23 +161,21 @@ module Nwsdk
 
       mapping = nwq.endpoint.config['cef_mapping']
 
-      sender = case nwq.endpoint.loghost
-        when nil
-          CEF::UDPSender.new(options[:loghost],options[:logport])
-        else
-          CEF::UDPSender.new(*nwq.endpoint.loghost)
-      end
+      sender = CEF.logger( config: {
+        receiver: options[:loghost],
+        port:     options[:logport]
+      })
 
       result.each do |res|
-        event=CEF::Event.new
+        event=CEF.event
         event_fields=mapping.keys & res.keys
         event_fields.each do |field|
           event.send('%s=' % mapping[field],res[field].to_s)
         end
         nwq.endpoint.config['cef_static_fields'].each {|k,v| event.send('%s='%k,v)}
         event.name=options[:name]
-        event.endTime=(res['time'].to_i * 1000).to_s
-        puts event.to_s
+        event.endTime=res['time']
+        puts event.to_cef
         sender.emit(event)
       end
     end
